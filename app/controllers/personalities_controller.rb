@@ -6,12 +6,6 @@ class PersonalitiesController < ApplicationController
     @scores = @personality.parse_personality
   end
 
-  def new
-  end
-
-
-
-
   def create
     # @personality = Personality.new
     # @personality.user = current_user
@@ -19,4 +13,10 @@ class PersonalitiesController < ApplicationController
     # @personality.score = get_personality(@content)
     # @personality.
   end
+
+  def new
+    @user = current_user
+    @personality = Personality.new
+  end
+
 end
