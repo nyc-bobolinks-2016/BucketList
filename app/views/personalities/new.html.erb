@@ -1,0 +1,19 @@
+<div class="row">
+  <%= form_for [@user, @personality], class:"col s12"  do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea1" name="text_to_analyze" class="materialize-textarea"></textarea>
+        <label for="textarea1" form="new_personality">Paste Here your text</label>
+      </div>
+    </div>
+    <div>
+          <input type="checkbox" id="twitter_box" />
+          <label for="twitter_box">Include twitter ?</label>
+          <input id="twitter_text" type="text" name="@twitter" value="" placeholder="twitter">
+      </p>
+    </div>
+    <div class="">
+        <input type="submit" name="name" value="submit", class= "waves-effect waves-light btn">
+    </div>
+  <%end%>
+</div>

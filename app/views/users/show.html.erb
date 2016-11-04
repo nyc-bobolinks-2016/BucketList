@@ -4,10 +4,10 @@
   <%= @user.first_name%>
 </div>
 <div class="">
-<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>discover your personality</a>
+<%= link_to "Analyze!", new_personality_path , class: "waves-effect waves-light btn" %>
 </div>
 
-<%if @user.personality >
+<%if @user.personality %>
 <div class="">
   <ul class="collapsible popout" data-collapsible="accordion">
     <li>
