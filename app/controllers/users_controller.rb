@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to '/login'
     else
-
+      flash[:notice] = "Please complete all fields."
     end
   end
 

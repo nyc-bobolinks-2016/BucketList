@@ -12,7 +12,7 @@ class PersonalitiesController < ApplicationController
   end
 
   def create
-    byebug
+
   end
 
 end
