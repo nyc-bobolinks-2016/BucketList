@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20161104163713) do
     t.float    "ex"
     t.float    "ag"
     t.float    "ne"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
