@@ -15,5 +15,8 @@ class PersonalitiesController < ApplicationController
   end
 
   def new
+    @user = current_user
+    @personality = Personality.new
   end
+  
 end
