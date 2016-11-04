@@ -1,1 +1,33 @@
 <h1>Hello!</h1>
+
+<h5>Based on your <%=@scores["word_count"]%> words...</h5>
+
+<h4>Big 5</h4>
+<% @scores["personality"].each do |trait| %>
+  <ul>
+    <b><%=trait["name"]%>: <%=trait["raw_score"]%></b>
+    <% trait["children"].each do |sub_trait| %>
+      <li style="color: gray;"> - <%=sub_trait["name"]%>: <%=sub_trait["raw_score"]%></li>
+    <%end%>
+  </ul>
+<%end%>
+
+<h4>Needs</h4>
+<% @scores["needs"].each do |need| %>
+  <b><%=need["name"]%>: <%=need["raw_score"]%></b><br>
+<% end %>
+
+<h4>Values</h4>
+<% @scores["values"].each do |value| %>
+  <b><%=value["name"]%>: <%=value["raw_score"]%></b><br>
+<% end %>
+
+<h4>Consumption Preferences</h4>
+<% @scores["consumption_preferences"].each do |preference_category| %>
+  <ul>
+    <b><%=preference_category["name"]%></b>
+    <%preference_category["consumption_preferences"].each do |consumption_preference|%>
+      <li style="color: gray;"> - <%=consumption_preference["name"]%>: <%=consumption_preference["score"]%></li>
+    <%end%>
+  </ul>
+<% end %>
