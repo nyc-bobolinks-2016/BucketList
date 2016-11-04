@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def show
+    @user = User.find_by(id: params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -9,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to '/login'
     else
-      
+
     end
   end
 
