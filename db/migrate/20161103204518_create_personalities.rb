@@ -8,6 +8,7 @@ class CreatePersonalities < ActiveRecord::Migration[5.0]
       t.float :ag
       t.float :ne
 
+
       t.timestamps
     end
   end

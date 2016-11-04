@@ -23,6 +23,19 @@
 
   <body>
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <nav>
+       <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <%if  current_user %>
+                <li><a href="/logout">Log Out</a></li>
+              <% else %>
+                <li><a href="/login">Log In</a></li>
+              <% end %>
+            </ul>
+        </div>
+      </nav>
+
      <div class="container">
     <%= yield %>
   </div>

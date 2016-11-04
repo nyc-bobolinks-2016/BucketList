@@ -1,1 +1,10 @@
 @import "materialize";
+
+#video{
+  height: 500px;
+  width: 100%;
+  background-image: url("http://wiztiles.com/wp-content/uploads/2012/03/HelloKittyLarge.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
