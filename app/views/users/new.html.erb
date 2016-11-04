@@ -1,1 +1,8 @@
-<h1>welcome user, why don't you go ahead and log in</h1>
+<h1>welcome user, why don't you go ahead and register?</h1>
+<%= form_for @user, url: '/users' do |f| %>
+First name:  <%= f.text_field :first_name %>
+Last name:  <%= f.text_field :last_name %>
+Email:  <%= f.text_field :email %>
+Password: <%= f.password_field :password %>
+<%= f.submit "Register" %>
+<% end %>

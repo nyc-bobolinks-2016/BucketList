@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-    redireect_to '/'
-    # change to 'sessions/new'
+    redirect_to '/login'
   end
 
   private
