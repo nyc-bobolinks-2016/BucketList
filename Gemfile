@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 gem 'twitter'
 # gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # gem 'gem-that-requires-env-variables'
