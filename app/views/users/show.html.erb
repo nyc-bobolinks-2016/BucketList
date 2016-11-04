@@ -1,3 +1,30 @@
 <h1>User</h1>
 
-<%= @user.first_name%>
+<div class="">
+  <%= @user.first_name%>
+</div>
+<div class="">
+<%= link_to per
+<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>discover your personality</a>
+</div>
+
+<div class="">
+  <ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>
+        ENJP
+      </div>
+
+
+      <div class="collapsible-body">
+          <div class="">
+            <input disabled type="range" id="test5" min="0" max="100" value="<%= (@user.personality.co*100) %>" />
+          </div>
+      <p><%= @user.personality.co%></p>
+      <p><%= @user.personality.ex%></p>
+      <p><%= @user.personality.ag%></p>
+      <p> <a hrefs="#"><%= @user.personality.ne%> </a></p></div>
+    </li>
+  </ul>
+</div>
