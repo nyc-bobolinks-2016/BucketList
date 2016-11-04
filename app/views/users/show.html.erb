@@ -7,15 +7,14 @@
 <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>discover your personality</a>
 </div>
 
+<%if @user.personality >
 <div class="">
   <ul class="collapsible popout" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>
+          <i class="material-icons">filter_drama</i>
         ENJP
       </div>
-
-
       <div class="collapsible-body">
           <div class="">
             <input disabled type="range" id="test5" min="0" max="100" value="<%= (@user.personality.co*100) %>" />
@@ -27,3 +26,4 @@
     </li>
   </ul>
 </div>
+<% end %>
