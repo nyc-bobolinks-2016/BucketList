@@ -26,6 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'twitter'
+# gem 'dotenv-rails', :require => 'dotenv/rails-now'
+# gem 'gem-that-requires-env-variables'
+
 gem 'materialize-sass'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
