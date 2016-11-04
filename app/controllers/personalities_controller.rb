@@ -18,5 +18,8 @@ class PersonalitiesController < ApplicationController
     @user = current_user
     @personality = Personality.new
   end
-  
+
+  def create
+  end
+
 end
