@@ -5,8 +5,13 @@ class PersonalitiesController < ApplicationController
   include PersonalitiesHelper
 
   def show
-    @personality = Personality.find(params[:id])
-    @scores = @personality.parse_personality
+    if current_user
+      @personality = Personality.find(params[:id])
+      @scores = @personality.parse_personality
+    else
+      flash[:notice] = "Please log in to view this page."
+      redirect_to '/login'
+    end
   end
 
   def new
