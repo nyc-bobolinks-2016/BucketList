@@ -7,6 +7,7 @@ class PersonalitiesController < ApplicationController
   def show
     @personality = Personality.find(params[:id])
     @scores = @personality.parse_personality
+    @mb_type = @personality.convert_to_mb
   end
 
   def new
