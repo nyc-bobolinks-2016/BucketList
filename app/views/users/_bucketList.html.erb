@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <% @buckelist.each do |item| %>
+    <li>
+        <input type="checkbox" id="<%=item.id%>" />
+       <label for="<%=item.id%>"><%=item.activity.title%></label>
+    </li>
+    <% end %>
+  </ul>
+</div>
