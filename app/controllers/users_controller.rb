@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       redirect_to '/login'
     else
       flash[:notice] = "Please complete all fields."
+      redirect_to '/users/new'
     end
   end
 

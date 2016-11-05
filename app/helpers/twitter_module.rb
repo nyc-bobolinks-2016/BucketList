@@ -11,4 +11,12 @@ module TwitterModule
 
   end
 
+  def parse_tweets(tweet_array)
+    @tweet_transcript = ""
+    tweet_array.each do |tweet|
+      @tweet_transcript += "#{tweet.text}\n"
+    end
+    @tweet_transcript
+  end
+
 end
