@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
   include NounprojectModule
 
   def index
-    @icon = get_icon
+
   end
 end
