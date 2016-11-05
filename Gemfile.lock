@@ -45,13 +45,6 @@ GEM
     builder (3.2.2)
     byebug (9.0.6)
     coderay (1.1.1)
-    coffee-rails (4.2.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     domain_name (0.5.20161021)
@@ -174,9 +167,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
     twitter (5.16.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -210,7 +200,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
-  coffee-rails (~> 4.2)
   dotenv-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -224,7 +213,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
   twitter
   tzinfo-data
   uglifier (>= 1.3.0)
