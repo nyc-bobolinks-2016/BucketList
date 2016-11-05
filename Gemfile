@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'dotenv-rails'
+gem 'oauth'
 gem 'twitter'
 # gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # gem 'gem-that-requires-env-variables'
