@@ -16,7 +16,7 @@
  */
 
 .parallax-container{
-background-image:url("http://fullhdwall.com/wp-content/uploads/2016/08/Space-Wallpaper.jpg");
+
 }
 .parallax{
   background-color: #455a64;
@@ -39,10 +39,16 @@ h1{
 }
 
 html {
-  font-family: 'Aldrich', sans-serif;
+  font-family: 'Abel', sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: 'Gudea', sans-serif;
 }
 
 #stage {
   width: 1024px;
   height: 1386px;
+}
+
+#statusbar{
+  vertical-align: middle;
 }
