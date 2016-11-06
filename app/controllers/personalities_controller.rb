@@ -8,6 +8,13 @@ class PersonalitiesController < ApplicationController
     @personality = Personality.find(params[:id])
     @scores = @personality.parse_personality
     @mb_type = @personality.convert_to_mb
+    if current_user
+      @personality = Personality.find(params[:id])
+      @scores = @personality.parse_personality
+    else
+      flash[:notice] = "Please log in to view this page."
+      redirect_to '/login'
+    end
   end
 
   def new
