@@ -1,10 +1,16 @@
 <div>
-  <ul>
+  <ul >
+    <form>
     <% @buckelist.each do |item| %>
     <li>
-        <input type="checkbox" id="<%=item.id%>" />
+      <% if item.checked %>
+        <input class = "bucket_list" type="checkbox" checked="checked" id="<%=item.id%>" />
+      <%else%>
+         <input class = "bucket_list" type="checkbox" id="<%=item.id%>" />
+      <%end%>
        <label for="<%=item.id%>"><%=item.activity.title%></label>
     </li>
     <% end %>
+  </form>
   </ul>
 </div>
