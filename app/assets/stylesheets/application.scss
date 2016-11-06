@@ -1,7 +1,7 @@
 @import "materialize";
 
-.parallaxx{
-background-color: blue;
+.parallax-container{
+background-image:url("http://fullhdwall.com/wp-content/uploads/2016/08/Space-Wallpaper.jpg");
 }
 .parallax{
   background-color: #455a64;
@@ -9,7 +9,6 @@ background-color: blue;
 body{
   background-color: #323d4c;
   color: white;
-  font-family: 'Rajdhani', sans-serif;
 }
 
 .nav-wrapper{
