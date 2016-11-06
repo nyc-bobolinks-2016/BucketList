@@ -7,8 +7,11 @@ module TwitterModule
       config.consumer_secret     = ENV["TWITTER_API_SECRET"]
     end
 
-    @timeline = client.user_timeline("#{user}")
-
+    begin
+      @timeline = client.search("from:#{user}")
+    rescue
+      @timeline = []
+    end
   end
 
   def parse_tweets(tweet_array)
