@@ -30,7 +30,6 @@ class Activity extends React.Component{
  }
 
 downActivity(){
-debugger
   var route = "/activities/"+this.state.activity.id+"/votes"
   $.ajax({
   url:route,
@@ -46,7 +45,7 @@ debugger
 passActivity(){
   var id = this.props.activity_id
   $.ajax({
-  url:"/activities/"+id+"/votes",
+  url:"/activities/"+this.state.activity.id+"/votes",
   method: "post",
   data:{voteType: "pass"}
 }).done((response) => {
@@ -59,7 +58,7 @@ passActivity(){
 upActivity(){
   var id = this.props.activity_id
   $.ajax({
-  url:"/activities/"+id+"/votes",
+  url:"/activities/"+this.state.activity.id+"/votes",
   method: "post",
   data:{voteType: "up"}
 }).done((response) => {
