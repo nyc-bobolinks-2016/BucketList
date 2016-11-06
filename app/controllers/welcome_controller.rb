@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
   include TwitterModule
+  include NounprojectModule
 
   def index
-    search("jesusmarlima")
+
   end
 end
