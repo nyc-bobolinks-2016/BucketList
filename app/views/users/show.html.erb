@@ -1,28 +1,27 @@
-<h1>User</h1>
-
-<div class="">
-  <%= @user.first_name%>
+<div class="user_profile">
+  <h3><%= @user.full_name %> - <%= @user.personality.convert_to_mb%><h3>
 </div>
 <div class="">
 <%= link_to "Analyze!", new_personality_path , class: "waves-effect waves-light btn" %>
 </div>
 
 <%if @user.personality %>
-<div class="">
-  <ul class="collapsible popout" data-collapsible="accordion">
+<div class="row">
+  <ul class="collapsible popout col s1 m1 l12" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
-          <i class="material-icons">filter_drama</i>
-        ENJP
+          <i class="material-icons"></i>
       </div>
-      <div class="collapsible-body">
-          <div class="">
-            <input disabled type="range" id="test5" min="0" max="100" value="<%= (@user.personality.co*100) %>" />
+      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][0]["name"], value:@user.personality.op } %>
+      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][1]["name"], value:@user.personality.co } %>
+      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][2]["name"], value:@user.personality.ex } %>
+      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][3]["name"], value:@user.personality.ag } %>
+      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][4]["name"], value:@user.personality.ne } %>
+      <div class="collapsible-body col s1 m1 l12">
+          <div class="col l12 center" >
+              <%= link_to "View full results",  personality_path(@user.personality.id), class: "waves-effect waves-light btn"  %>
           </div>
-      <p><%= @user.personality.co%></p>
-      <p><%= @user.personality.ex%></p>
-      <p><%= @user.personality.ag%></p>
-      <p> <a hrefs="#"><%= @user.personality.ne%> </a></p></div>
+      </div>
     </li>
   </ul>
 </div>
