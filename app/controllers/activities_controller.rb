@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-
+  include ActivityHelper
   def show
     @activity = Activity.find_by(id: params[:id])
     if request.xhr?
@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
   end
 
   def index
-    @activity = Activity.all.sample
+    @activity = suggest_next_activity
   end
 
 end

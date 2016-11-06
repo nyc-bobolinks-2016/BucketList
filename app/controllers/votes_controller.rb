@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   include VotesHelper
+  include ActivityHelper
 
   def create
     @activity = Activity.find_by(id: params[:activity_id])
@@ -12,10 +13,11 @@ class VotesController < ApplicationController
     elsif vote_value == "up"
       @vote.vote_value = true
       @activity = upvote_activity(@activity)
+      @list_item = ListItem.create(user: current_user, activity: @activity)
       @activity.save
     end
     @vote.save
-    render json: Activity.find_by(id: rand(40))
+    render json: suggest_next_activity
   end
 
 end
