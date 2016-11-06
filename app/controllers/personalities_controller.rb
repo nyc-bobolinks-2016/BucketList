@@ -20,6 +20,7 @@ class PersonalitiesController < ApplicationController
 
   def new
     @personality = Personality.new
+    '/load'
   end
 
   def create
@@ -38,4 +39,8 @@ class PersonalitiesController < ApplicationController
     redirect_to @personality
   end
 
+  def load
+    sleep 2
+    redirect_to 'new_personality_path'
+  end
 end
