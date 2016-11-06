@@ -2,9 +2,6 @@ class ActivityVote extends React.Component{
 
   constructor(){
     super()
-    this.state = {
-      activity:[]
-    }
   }
 
   render(){
