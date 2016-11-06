@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :votes
   has_many :list_items
   has_many :activities, through: :list_items
+  has_many :voted_activities, through: :votes, source: :activity
   has_one :personality
 
   def full_name
