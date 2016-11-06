@@ -1,7 +1,7 @@
 require 'rest-client'
 
 class PersonalitiesController < ApplicationController
-  
+
   include TwitterModule
   include PersonalitiesHelper
 
