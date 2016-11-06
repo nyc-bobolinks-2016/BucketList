@@ -7,7 +7,10 @@ class ActivitiesController < ApplicationController
     else
       @activity
     end
+  end
 
+  def index
+    @activity = Activity.all.sample
   end
 
 end
