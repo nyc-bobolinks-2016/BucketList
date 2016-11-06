@@ -1,10 +1,14 @@
 require 'rest-client'
 
 class PersonalitiesController < ApplicationController
+  
   include TwitterModule
   include PersonalitiesHelper
 
   def show
+    @personality = Personality.find(params[:id])
+    @scores = @personality.parse_personality
+    @mb_type = @personality.convert_to_mb
     if current_user
       @personality = Personality.find(params[:id])
       @scores = @personality.parse_personality
