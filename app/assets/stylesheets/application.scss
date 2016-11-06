@@ -1,20 +1,25 @@
 @import "materialize";
 
+.parallaxx{
+background-color: blue;
+}
+.parallax{
+  background-color: #455a64;
+}
 body{
   background-color: #323d4c;
   color: white;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .nav-wrapper{
   background-color: #242a33;
 }
 
-#video{
-  text-align: center;
-  height: 500px;
-  width: 100%;
-  background-image: url("http://wiztiles.com/wp-content/uploads/2012/03/HelloKittyLarge.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.btn{
+  background-color: #4caf50;
+}
+
+html {
+  font-family: 'Aldrich', sans-serif;
 }

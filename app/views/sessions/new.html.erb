@@ -1,6 +1,6 @@
-<h1>why don't you go ahead and log in</h1>
+<h1>Log In</h1>
 <%= form_tag '/login' do %>
 Email:  <%= text_field_tag :email %>
 Password: <%= password_field_tag :password %>
-<%= submit_tag "Log In y' all" %>
+<a class="waves-effect waves-light btn"> <%= submit_tag "Log In" %> </a>
 <% end %>
