@@ -6,11 +6,11 @@ class Personality < ApplicationRecord
   end
 
   def map_big_five(scores)
-    self.op = scores["personality"][0]["raw_score"]
-    self.co = scores["personality"][1]["raw_score"]
-    self.ex = scores["personality"][2]["raw_score"]
-    self.ag = scores["personality"][3]["raw_score"]
-    self.ne = scores["personality"][4]["raw_score"]
+    self.op = scores["personality"][0]["percentile"]
+    self.co = scores["personality"][1]["percentile"]
+    self.ex = scores["personality"][2]["percentile"]
+    self.ag = scores["personality"][3]["percentile"]
+    self.ne = scores["personality"][4]["percentile"]
   end
 
   def sloan_notation
