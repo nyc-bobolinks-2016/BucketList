@@ -16,4 +16,13 @@
         <input type="submit" name="name" value="submit", class= "waves-effect waves-light btn">
     </div>
   <%end%>
+  <div class="row">
+    <% if @errors %>
+      <ul>
+        <% @errors.each do |error| %>
+        <li><%=error %></li>
+        <%end%>
+      </ul>
+    <% end %>
+  </div>
 </div>
