@@ -10,7 +10,7 @@ class Activity < ApplicationRecord
   end
 
   def icon_url
-    url_icon = JSON.parse(get_icon(rand(20).to_s))
+    url_icon = JSON.parse(get_icon(rand(1..20).to_s))
     url_icon["icon"]["preview_url"]
   end
 
