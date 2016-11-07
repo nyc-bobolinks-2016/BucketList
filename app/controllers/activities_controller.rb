@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   def show
     @activity = Activity.find_by(id: params[:id])
     if request.xhr?
-      render json: @activity
+      render json: @activity.parse_react
     else
       @activity
     end

@@ -15,9 +15,14 @@ class VotesController < ApplicationController
       @activity = upvote_activity(@activity)
       @list_item = ListItem.create(user: current_user, activity: @activity)
       @activity.save
+    elsif vote_value = "done"
+      @vote.vote_value = true
+      @activity = upvote_activity(@activity)
+      @list_item = ListItem.create(user: current_user, activity: @activity, checked: true)
+      @activity.save
     end
     @vote.save
-    render json: suggest_next_activity
+    render json: suggest_next_activity.parse_react
   end
 
 end
