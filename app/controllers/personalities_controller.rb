@@ -32,11 +32,16 @@ class PersonalitiesController < ApplicationController
       @tweet_transcript = parse_tweets(@twitter_feed)
       @content += "\n #{@tweet_transcript}"
     end
-    @scores = get_personality(@content)
-    @personality.scores = JSON.generate(@scores)
-    @personality.map_big_five(@scores)
-    @personality.save
-    redirect_to @personality
+    if @content.split.count > 100
+      @scores = get_personality(@content)
+      @personality.scores = JSON.generate(@scores)
+      @personality.map_big_five(@scores)
+      @personality.save
+      redirect_to @personality
+    else
+      flash[:error] = "Naaaaaaaahhhh...."
+      redirect_to '/personalities/new'
+    end
   end
 
   def load

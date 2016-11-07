@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     if current_user
       @user = User.find_by(id: params[:id])
-      @buckelist = @user.list_items
+      @buckelist = @user.list_items.sort{|a,b| a<=>b}
     else
       flash[:notice] = "Please log in to view this page."
       redirect_to '/login'
