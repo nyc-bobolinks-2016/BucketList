@@ -47,14 +47,14 @@ ActiveRecord::Schema.define(version: 20161107015915) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "email",           null: false
+    t.string   "first_name",                    null: false
+    t.string   "last_name",                     null: false
+    t.string   "email",                         null: false
     t.integer  "personality_id"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.float    "comfortzone"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.float    "comfortzone",     default: 0.0
   end
 
   create_table "votes", force: :cascade do |t|
