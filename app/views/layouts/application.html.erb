@@ -35,7 +35,7 @@
        <div class="nav-wrapper">
           <a href="/" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <%if  current_user %>
+              <%if current_user %>
                 <li>Currently logged in as <%=current_user.first_name%></li>
                 <li><a href="/users/<%=current_user.id%>">Profile</a></li>
                 <% if current_user.personality %>

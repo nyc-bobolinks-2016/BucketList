@@ -43,12 +43,14 @@ html {
   // font-family: 'Aldrich', sans-serif;
   // font-family: 'Molengo', sans-serif;
 }
+p{
+  font-family: sans-serif;
+}
 
 .material-icons{
   font-size: 50px;
 }
-// .session{
-//   margin-top: 50px;
-//   border: 10px #48586d solid;
-//   background-color: #48586d;
-// }
+.session{
+  width: 300px;
+  margin: auto;
+}
