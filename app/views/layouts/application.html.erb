@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Gudea|Quattrocento+Sans" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -23,6 +24,7 @@
               <%if  current_user %>
                 <li>Currently logged in as <%=current_user.first_name%></li>
                 <li><a href="/users/<%=current_user.id%>">Profile</a></li>
+                <li><a href="/personalities/<%=current_user.personality.id%>">Results</a></li>
                 <% if current_user.personality %>
                   <li><a href="/activities">Find Activities</a></li>
                 <%end%>
