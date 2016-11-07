@@ -1,14 +1,12 @@
 $(document).ready(function() {
-  $('.data').toggle()
+  $(".wait").toggle();
   $("#twitter_text").toggle();
   $("#twitter_box").on('click', function(){
     $("#twitter_text").toggle();
   });
 
-  setTimeout(function(){
-      $('body').addClass('loaded');
-      $('.wait').toggle()
-      $('.data').toggle()
-  }, 3000);
+  $("#new_personality").submit(function(event){
+      $(".wait").toggle()
+    });
 
-});
+  });
