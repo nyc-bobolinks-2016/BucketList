@@ -17,11 +17,9 @@ class Activity extends React.Component{
     }
   }
 
-  componentDidMount(){
-    debugger
-    var id = this.props.activity_id
+  componentWillMount(){
     $.ajax({
-    url:"/activities/"+id,
+    url: '/activities',
     method: "get"
   }).done((response) => {
     this.setState({
