@@ -34,6 +34,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def share
+    @user = User.find_by(id: params[:id])
+    @buckelist = @user.list_items.sort{|a,b| a<=>b}
+  end
+
   private
 
     def user_params
