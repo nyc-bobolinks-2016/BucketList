@@ -18,7 +18,6 @@ class Activity extends React.Component{
   }
 
   componentDidMount(){
-    debugger
     var id = this.props.activity_id
     $.ajax({
     url:"/activities/"+id,
