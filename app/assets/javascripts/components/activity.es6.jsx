@@ -94,14 +94,42 @@ class Activity extends React.Component{
 
   render(){
     return(
-      <div>
-        <img src={this.state.activity.img_url}  className="circle responsive-img white "  />
-        <p>{this.state.activity.title}</p>
-        <div className="">
-          <a ref="down" onClick={(event) => this.downActivity(event)} disabled={this.state.disabled} className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">thumb_down</i></a>
-          <a ref="pass" onClick={(event) => this.passActivity(event)} disabled={this.state.disabled} className="btn-floating btn-large waves-effect waves-light blue"><i className="material-icons">swap_horiz</i></a>
-          <a ref="done" onClick={(event) => this.doneActivity(event)} disabled={this.state.disabled} className="btn-floating btn-large waves-effect waves-light yellow"><i className="material-icons">done</i></a>
-          <a ref="up" onClick={(event) => this.upActivity(event)} disabled={this.state.disabled} className="btn-floating btn-large waves-effect waves-light green"><i className="material-icons">thumb_up</i></a>
+      <div className="container">
+        <div className="center">
+          <h3>{this.state.activity.title}</h3>
+        </div>
+        <div className="center">
+            <img src={this.state.activity.img_url}  className="circle responsive-img white "  />
+        </div>
+        <div className="row col 12">
+          <div className="col l3 center">
+            <a ref="down" onClick={(event) => this.downActivity(event)}
+                disabled={this.state.disabled}
+                className="btn-floating btn-large waves-effect waves-light red">
+              <i className="material-icons">thumb_down</i>
+            </a>
+          </div>
+          <div className="col l3 center">
+            <a ref="pass" onClick={(event) => this.passActivity(event)}
+                disabled={this.state.disabled}
+                className="btn-floating btn-large waves-effect waves-light blue">
+              <i className="material-icons">swap_horiz</i>
+            </a>
+          </div>
+          <div className="col l3 center">
+            <a ref="done" onClick={(event) => this.doneActivity(event)}
+                disabled={this.state.disabled}
+                className="btn-floating btn-large waves-effect waves-light yellow">
+              <i className="material-icons">done</i>
+            </a>
+          </div>
+          <div className="col l3 center">
+            <a ref="up" onClick={(event) => this.upActivity(event)}
+                disabled={this.state.disabled}
+                className="btn-floating btn-large waves-effect waves-light green">
+              <i className="material-icons">thumb_up</i>
+            </a>
+          </div>
         </div>
       </div>
     )
