@@ -24,9 +24,19 @@ class PersonalitiesController < ApplicationController
   end
 
   def create
+    if params[:personality][:text]
+      uploaded = upload(params[:personality][:text])
+    end
+
+    @content = params["text_to_analyze"]
+
+    if uploaded
+        @content += uploaded
+    end
+
     @personality = Personality.new
     @personality.user = current_user
-    @content = params["text_to_analyze"]
+
     unless params["@twitter"] == ""
       @twitter_feed = search(params["@twitter"])
       @tweet_transcript = parse_tweets(@twitter_feed)
@@ -48,4 +58,35 @@ class PersonalitiesController < ApplicationController
     sleep 2
     redirect_to 'new_personality_path'
   end
+
+  def upload(text)
+    begin
+      uploaded_io = text
+      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+
+      file = 'public/uploads/'+ uploaded_io.original_filename
+      doc = ""
+
+      if uploaded_io.content_type == "application/pdf"
+        doc = read_pdf(file)
+      else
+        doc = Docx::Document.open(file).text
+      end
+    rescue
+        return nil
+    end
+    doc
+  end
+
+  def read_pdf(file)
+    str = ""
+    reader = PDF::Reader.new(file)
+    reader.pages.each do |page|
+          str += page.text
+    end
+    str
+  end
+
 end
