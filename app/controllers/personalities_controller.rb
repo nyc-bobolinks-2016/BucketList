@@ -39,8 +39,8 @@ class PersonalitiesController < ApplicationController
       @personality.save
       redirect_to @personality
     else
-      flash[:error] = "Naaaaaaaahhhh...."
-      redirect_to '/personalities/new'
+      flash[:error] = "Not enough words! \n Must have 100 or more."
+      redirect_to new_personality_path
     end
   end
 

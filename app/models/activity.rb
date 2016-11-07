@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-    include NounprojectModule
+  include NounprojectModule
 
   def mb_to_bigfive(mb_type)
     self.op = mb_type[1] == "S" ? 0.25 : 0.75
