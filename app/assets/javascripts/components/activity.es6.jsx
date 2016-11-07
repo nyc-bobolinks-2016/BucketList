@@ -17,6 +17,7 @@ class Activity extends React.Component{
     }
   }
 
+
   componentWillMount(){
     $.ajax({
     url: '/activities',
