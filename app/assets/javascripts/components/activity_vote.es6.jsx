@@ -5,7 +5,6 @@ class ActivityVote extends React.Component{
   }
 
   render(){
-  debugger
   return(
     <div>
       <Activity activity_id = {this.props.activity_id}/>
