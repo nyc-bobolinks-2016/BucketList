@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abel|Gudea|Quattrocento+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Electrolize|Molengo" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -23,12 +23,13 @@
   <body>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+      var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      <nav>
        <div class="nav-wrapper">
@@ -39,7 +40,6 @@
                 <li><a href="/users/<%=current_user.id%>">Profile</a></li>
                 <% if current_user.personality %>
                 <li><a href="/personalities/<%=current_user.personality.id%>">Results</a></li>
-
                   <li><a href="/activities">Find Activities</a></li>
 
                 <%end%>
