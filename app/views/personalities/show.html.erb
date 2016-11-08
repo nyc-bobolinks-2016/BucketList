@@ -28,14 +28,58 @@
     <b><%=value["name"]%>: <%=value["percentile"]%></b><br>
   <% end %>
 
-  <h4>Consumption Preferences</h4>
-  <% @scores["consumption_preferences"].each do |preference_category| %>
-    <ul>
-      <b><%=preference_category["name"]%></b>
-      <%preference_category["consumption_preferences"].each do |consumption_preference|%>
-        <li style="color: gray;"> - <%=consumption_preference["name"]%>: <%=consumption_preference["score"]%></li>
-      <%end%>
-    </ul>
-  <% end %>
+<h4>Consumption Preferences</h4>
+<% @scores["consumption_preferences"].each do |preference_category| %>
+  <ul>
+    <b><%=preference_category["name"]%></b>
+    <%preference_category["consumption_preferences"].each do |consumption_preference|%>
+      <li style="color: gray;"> - <%=consumption_preference["name"]%>: <%=consumption_preference["score"]%></li>
+    <%end%>
+  </ul>
+<% end %>
 
-</div>
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Openess", "Conscientiousness", "Extraversion", "Agreeableness", "Emotional Range" ],
+        datasets: [{
+            label: 'Big 5 Personality Traits',
+            data: [
+              <%=(current_user.personality.op*100).round(2)%>,
+              <%=(current_user.personality.co*100).round(2)%>,
+              <%=(current_user.personality.ex*100).round(2)%>,
+              <%=(current_user.personality.ag*100).round(2)%>,
+              <%=(current_user.personality.ne*100).round(2)%>
+            ],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>

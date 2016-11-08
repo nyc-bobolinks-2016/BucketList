@@ -24,7 +24,7 @@ class PersonalitiesController < ApplicationController
   end
 
   def create
-    if params[:personality][:text]
+    if params[:personality] && params[:personality][:text]
       uploaded = upload(params[:personality][:text])
     end
 
