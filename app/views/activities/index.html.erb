@@ -1,18 +1,16 @@
 <div class="activities">
   <%= render 'activity', locals:{activity: @activity} %>
 </div>
-
-
-<div id="slider">
-  <form action="#">
-    <p class="thumb range-field">
-    <input type="range" id="test5" min="0.0" max="500.0" />
-    </p>
-  </form>
+<div class="row">
+<form class="col s12">
+  <div class="input-field col s4 m4 l4 hide-on-med-and-down center">
+    <span id="lessadventure">Less Adventure</span>
+  </div>
+  <div class="input-field col s12 m12 l4">
+    <p class="range-field">  <input type="range" id="test5" min="0.0" max="500.0" /> </p>
+  </div>
+  <div class="input-field col s4 m4 l4 hide-on-med-and-down center">
+      <span id="moreadventure">More Adventure</span>
+  </div>
+</form>
 </div>
-<p id="lessadventure">
-  Less Adventure
-</p>
-<p id="moreadventure">
-  More Adventure
-</p>
