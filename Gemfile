@@ -29,6 +29,8 @@ gem 'react-rails'
 gem 'dotenv-rails'
 gem 'oauth'
 gem 'twitter'
+gem 'docx'
+gem 'pdf-reader'
 # gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # gem 'gem-that-requires-env-variables'
 

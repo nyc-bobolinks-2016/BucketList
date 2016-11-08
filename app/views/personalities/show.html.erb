@@ -1,26 +1,32 @@
-<h5>Based on your <%=@scores["word_count"]%> words...</h5>
+<div class="wait">
+  <div class="progress">
+      <div class="indeterminate"></div>
+  </div>
+</div>
+<div class="data">
+  <h5>Based on your <%=@scores["word_count"]%> words...</h5>
 
-<h4>Myers-Briggs Type: <%=@mb_type%></h4>
+  <h4>Myers-Briggs Type: <%=@mb_type%></h4>
 
-<h4>Big 5</h4>
-<% @scores["personality"].each do |trait| %>
-  <ul>
-    <b><%=trait["name"]%>: <%=trait["percentile"]%></b>
-    <% trait["children"].each do |sub_trait| %>
-      <li style="color: gray;"> - <%=sub_trait["name"]%>: <%=sub_trait["percentile"]%></li>
-    <%end%>
-  </ul>
-<%end%>
+  <h4>Big 5</h4>
+  <% @scores["personality"].each do |trait| %>
+    <ul>
+      <b><%=trait["name"]%>: <%=trait["percentile"]%></b>
+      <% trait["children"].each do |sub_trait| %>
+        <li style="color: gray;"> - <%=sub_trait["name"]%>: <%=sub_trait["percentile"]%></li>
+      <%end%>
+    </ul>
+  <%end%>
 
-<h4>Needs</h4>
-<% @scores["needs"].each do |need| %>
-  <b><%=need["name"]%>: <%=need["percentile"]%></b><br>
-<% end %>
+  <h4>Needs</h4>
+  <% @scores["needs"].each do |need| %>
+    <b><%=need["name"]%>: <%=need["percentile"]%></b><br>
+  <% end %>
 
-<h4>Values</h4>
-<% @scores["values"].each do |value| %>
-  <b><%=value["name"]%>: <%=value["percentile"]%></b><br>
-<% end %>
+  <h4>Values</h4>
+  <% @scores["values"].each do |value| %>
+    <b><%=value["name"]%>: <%=value["percentile"]%></b><br>
+  <% end %>
 
 <h4>Consumption Preferences</h4>
 <% @scores["consumption_preferences"].each do |preference_category| %>

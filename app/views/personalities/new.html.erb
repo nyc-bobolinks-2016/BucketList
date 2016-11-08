@@ -1,28 +1,43 @@
 <div class="row">
   <%= form_for @personality, class:"col s12"  do |f| %>
-    <div class="row">
-      <div class="input-field col s12">
-        <label for="text_to_analize" form="new_personality">Paste Here your text</label>
-        <textarea id="text_to_analize" name="text_to_analyze" class="materialize-textarea"></textarea>
-      </div>
-    </div>
-    <div>
-          <input type="checkbox" id="twitter_box" />
-          <label for="twitter_box">Include twitter ?</label>
-          <input id="twitter_text" type="text" name="@twitter" value="" placeholder="twitter">
-      </p>
-    </div>
-    <div class="">
-        <input type="submit" name="name" value="submit", class= "waves-effect waves-light btn">
-    </div>
-  <%end%>
   <div class="row">
-    <% if @errors %>
-      <ul>
-        <% @errors.each do |error| %>
-        <li><%=error %></li>
-        <%end%>
-      </ul>
-    <% end %>
+    <div class="input-field col s12">
+      <label for="text_to_analize" form="new_personality">Paste Here your text</label>
+      <textarea id="text_to_analize" name="text_to_analyze" class="materialize-textarea"></textarea>
+    </div>
   </div>
+  <div>
+    <input type="checkbox" id="twitter_box" />
+    <label for="twitter_box">Include twitter ?</label>
+    <input id="twitter_text" type="text" name="@twitter" value="" placeholder="twitter">
+  </p>
+</div>
+<div class="file-field input-field">
+  <div class="btn">
+    <span>File</span>
+    <%= f.file_field :text %>
+  </div>
+  <div class="file-path-wrapper">
+    <input class="file-path validate" type="text">
+  </div>
+</div>
+
+<div class="">
+  <input type="submit" name="name" value="submit", class= "waves-effect waves-light btn">
+</div>
+<%end%>
+<div class="wait">
+  <div class="progress">
+      <div class="indeterminate"></div>
+  </div>
+</div>
+<div class="row">
+  <% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%=error %></li>
+    <%end%>
+  </ul>
+  <% end %>
+</div>
 </div>
