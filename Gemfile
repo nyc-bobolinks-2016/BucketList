@@ -40,6 +40,7 @@ gem 'materialize-sass'
 gem 'rest-client'
 gem "pry"
 gem "chart-js-rails"
+gem 'chartjs-ror'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -52,6 +52,8 @@ GEM
     byebug (9.0.6)
     chart-js-rails (0.1.0)
       railties (> 3.1)
+    chartjs-ror (3.0.2)
+      rails (>= 3.1)
     coderay (1.1.1)
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
@@ -232,7 +234,11 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   chart-js-rails
+
+  chartjs-ror
+
   docx
+
   dotenv-rails
   jbuilder (~> 2.5)
   jquery-rails
