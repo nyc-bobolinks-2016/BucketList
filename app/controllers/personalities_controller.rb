@@ -29,7 +29,6 @@ class PersonalitiesController < ApplicationController
     end
 
     @content = params["text_to_analyze"]
-
     if uploaded
         @content += uploaded
     end

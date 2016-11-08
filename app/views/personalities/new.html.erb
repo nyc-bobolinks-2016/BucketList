@@ -2,27 +2,34 @@
   <%= form_for @personality, class:"col s12"  do |f| %>
   <div class="row">
     <div class="input-field col s12">
+      <i class="material-icons prefix">comment</i>
       <label for="text_to_analize" form="new_personality">Paste Here your text</label>
       <textarea id="text_to_analize" name="text_to_analyze" class="materialize-textarea"></textarea>
     </div>
   </div>
-  <div>
-    <input type="checkbox" id="twitter_box" />
-    <label for="twitter_box">Include twitter ?</label>
-    <input id="twitter_text" type="text" name="@twitter" value="" placeholder="twitter">
-  </p>
-</div>
-<div class="file-field input-field">
-  <div class="btn">
-    <span>File</span>
-    <%= f.file_field :text %>
+  <div class="row">
+    <div class="input-field col s12 m6 l6">
+      <div class="file-field input-field" >
+        <div class="col s12 m1 l1">
+          <span><i class="material-icons prefix">library_books</i></span>
+            <%= f.file_field :text %>
+          </div>
+        <div class="file-path-wrapper col s12 m9 l9">
+          <input class="file-path validate" type="text" placeholder="file upload">
+        </div>
+      </div>
+    </div>
+    <div class="input-field col s12 m6 l6">
+      <div class="input-field col s12 m2 l2">
+        <input type="checkbox" id="twitter_box" />
+        <label for="twitter_box">twitter?<label>
+      </div>
+      <div class="input-field col s12 m6 l10">
+        <input id="twitter_text" type="text" name="@twitter" value="">
+      </div>
+    </div>
   </div>
-  <div class="file-path-wrapper">
-    <input class="file-path validate" type="text">
-  </div>
-</div>
-
-<div class="">
+<div class="center">
   <input type="submit" name="name" value="submit", class= "waves-effect waves-light btn">
 </div>
 <%end%>
