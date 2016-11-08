@@ -1,16 +1,4 @@
-
-
-
-<h3><%= @user.first_name %>'s Bucklist<h3>
-
-
-
-<%= render 'bucketList', locals:{buckelist: @buckelist } %>
-
-
-
-
-
-
-
-<a href="/" class="waves-effect waves-light btn">Try for Yourself</a>
+<%= render 'bucketList_no_form', locals:{buckelist: @buckelist } %>
+<div class="row center">
+  <a href="/" class="waves-effect waves-light btn">Try for Yourself</a>
+</div>
