@@ -17,8 +17,9 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+//= require materialize
 
-var options = [{selector: '#staggered-test', offset: 400, callback: function(el) {
-	Materialize.showStaggeredList($(el));
-} },];
-  Materialize.scrollFire(options);
+$(document).ready(function(){
+	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+	$('.modal').modal();
+});

@@ -11,21 +11,24 @@
 </div>
 
 <%elsif @user.personality %>
-<div class="row">
-  <ul class="collapsible popout col s1 m1 l2" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header orange">
-          <p><%=@type.nickname%></p> <i class="material-icons"></i>
+<div class="row section">
+  <div class="col">
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn" href="#modal1">About</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal pink">
+      <div class="modal-content">
+        <h4><%=@type.nickname%></h4>
+        <p><%=@type.content%></p>
       </div>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][0]["name"], value:@user.personality.op } %>
-      <div class="collapsible-body col s1 m1 l12">
-          <div class="col l12 center" >
-              <%= link_to "View full results",  personality_path(@user.personality.id), class: "waves-effect waves-light btn"  %>
-          </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        <a href="/personalities/<%=@user.personality.id%>" class=" modal-action modal-close waves-effect waves-green btn-flat">More</a>
       </div>
-    </li>
-  </ul>
-</div>
+    </div>
+
+
 <% end %>
 
 <%= render 'bucketList', locals:{buckelist: @buckelist} %>

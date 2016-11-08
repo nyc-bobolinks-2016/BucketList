@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  def big
+  end
+  
   def show
     if current_user
       @user = User.find_by(id: params[:id])
@@ -44,6 +47,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @buckelist = @user.list_items.sort{|a,b| a<=>b}
   end
+
 
   private
 
