@@ -31,6 +31,8 @@
       }(document, 'script', 'facebook-jssdk'));</script>
 
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <% if current_page?('/')%>
+     <%else%>
      <nav>
        <div class="nav-wrapper">
           <a href="/" class="brand-logo">Logo</a>
@@ -50,7 +52,7 @@
             </ul>
         </div>
       </nav>
-
+      <%end%>
      <div class="container">
        <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
