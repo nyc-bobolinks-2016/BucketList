@@ -1,79 +1,41 @@
 <h5>Based on your <%=@scores["word_count"]%> words...</h5>
 
-<h4>Myers-Briggs Type: <%=@mb_type%></h4>
+<h4 align="center">Big 5 Personality Traits</h4>
+<h6 align="center">Myers-Briggs Type: <%=@mb_type%></h6>
+<div class="big-five-container">
+  <% @scores["personality"].each do |trait| %>
+      <div class="big-five" >
+        <b><%=trait["name"]%></b>
+        <%= horizontal_bar_chart big_five_data(trait), big_five_options %>
+        <div class="sub-big-five" style="display:none;">
+          <%= horizontal_bar_chart sub_trait_data(trait), sub_trait_options %>
+        </div>
+      </div><br>
+  <%end%>
+</div><br><br>
+<div class="row">
+  <div class="col l6" >
+    <%= polar_area_chart radar_data(@scores["needs"]), radar_options("Needs") %>
+  </div>
+  <div class="col l6">
+    <%= polar_area_chart radar_data(@scores["values"]), radar_options("Values") %>
+  </div>
+</div>
 
-<h4>Big 5</h4>
-<% @scores["personality"].each do |trait| %>
-  <ul>
-    <b><%=trait["name"]%>: <%=trait["percentile"]%></b>
-    <% trait["children"].each do |sub_trait| %>
-      <li style="color: gray;"> - <%=sub_trait["name"]%>: <%=sub_trait["percentile"]%></li>
-    <%end%>
-  </ul>
-<%end%>
 
-<h4>Needs</h4>
-<% @scores["needs"].each do |need| %>
-  <b><%=need["name"]%>: <%=need["percentile"]%></b><br>
-<% end %>
+<h4 align="center">Consumption Preferences</h4>
 
-<h4>Values</h4>
-<% @scores["values"].each do |value| %>
-  <b><%=value["name"]%>: <%=value["percentile"]%></b><br>
-<% end %>
-
-<h4>Consumption Preferences</h4>
-<% @scores["consumption_preferences"].each do |preference_category| %>
-  <ul>
-    <b><%=preference_category["name"]%></b>
-    <%preference_category["consumption_preferences"].each do |consumption_preference|%>
-      <li style="color: gray;"> - <%=consumption_preference["name"]%>: <%=consumption_preference["score"]%></li>
-    <%end%>
-  </ul>
-<% end %>
-
-<canvas id="myChart" width="400" height="200"></canvas>
-
-<script>
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ["Openess", "Conscientiousness", "Extraversion", "Agreeableness", "Emotional Range" ],
-        datasets: [{
-            label: 'Big 5 Personality Traits',
-            data: [
-              <%=(current_user.personality.op*100).round(2)%>,
-              <%=(current_user.personality.co*100).round(2)%>,
-              <%=(current_user.personality.ex*100).round(2)%>,
-              <%=(current_user.personality.ag*100).round(2)%>,
-              <%=(current_user.personality.ne*100).round(2)%>
-            ],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 2
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>
+<div class="row">
+  <div class="col l6" >
+      <h5 align="center">Highly unlikely to...</h5>
+      <% unlikely_preferences(@scores["consumption_preferences"]).each do |preference| %>
+        <li><%=preference%></li>
+      <% end %>
+  </div>
+  <div class="col l6">
+    <h5 align="center">Highly likely to...</h5>
+    <% likely_preferences(@scores["consumption_preferences"]).each do |preference| %>
+      <li ><%=preference%></li>
+    <% end %>
+  </div>
+</div>
