@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     if current_user
       @user = User.find_by(id: params[:id])
       @buckelist = @user.list_items.sort{|a,b| a<=>b}
+      if @user.personality
+        @findtype = @user.personality.convert_to_mb
+        @type = Type.find_by(title: @findtype)
+      end
     else
       flash[:notice] = "Please log in to view this page."
       redirect_to '/login'

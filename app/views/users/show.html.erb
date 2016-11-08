@@ -13,14 +13,10 @@
 <div class="row">
   <ul class="collapsible popout col s1 m1 l12" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header">
-          <i class="material-icons"></i>
+      <div class="collapsible-header pink">
+          <p><%=@type.nickname%></p> <i class="material-icons"></i>
       </div>
       <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][0]["name"], value:@user.personality.op } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][1]["name"], value:@user.personality.co } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][2]["name"], value:@user.personality.ex } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][3]["name"], value:@user.personality.ag } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][4]["name"], value:@user.personality.ne } %>
       <div class="collapsible-body col s1 m1 l12">
           <div class="col l12 center" >
               <%= link_to "View full results",  personality_path(@user.personality.id), class: "waves-effect waves-light btn"  %>
