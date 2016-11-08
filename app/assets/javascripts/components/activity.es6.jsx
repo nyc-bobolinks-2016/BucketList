@@ -99,27 +99,27 @@ class Activity extends React.Component{
           <h3>{this.state.activity.title}</h3>
         </div>
         <div className="center">
-            <img src={this.state.activity.img_url}  className="circle responsive-img white "  />
+            <img src={this.state.activity.img_url}  className="circle responsive-img white z-depth-5"  />
         </div>
         <div className="row col 12">
           <div className="col l3 center">
             <a ref="down" onClick={(event) => this.downActivity(event)}
                 disabled={this.state.disabled}
-                className="btn-floating btn-large waves-effect waves-light red">
+                className="btn-floating btn-large waves-effect waves-light red darken-3">
               <i className="material-icons">thumb_down</i>
             </a>
           </div>
           <div className="col l3 center">
             <a ref="pass" onClick={(event) => this.passActivity(event)}
                 disabled={this.state.disabled}
-                className="btn-floating btn-large waves-effect waves-light blue">
+                className="btn-floating btn-large waves-effect waves-light light-blue lighten-2">
               <i className="material-icons">swap_horiz</i>
             </a>
           </div>
           <div className="col l3 center">
             <a ref="done" onClick={(event) => this.doneActivity(event)}
                 disabled={this.state.disabled}
-                className="btn-floating btn-large waves-effect waves-light yellow">
+                className="btn-floating btn-large waves-effect waves-light  orange lighten-1">
               <i className="material-icons">done</i>
             </a>
           </div>

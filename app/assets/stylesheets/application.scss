@@ -26,6 +26,10 @@ body{
   color: white;
 }
 
+#share_ul{
+  border: none;
+}
+
 h1{
   color: white;
 }
@@ -35,11 +39,68 @@ h1{
 }
 
 .btn{
-  background-color: #4caf50;
+  background-color: #76ff03;
 }
 
+ .input-field input[type=text]:focus {
+     border-bottom: 1px solid #76ff03;
+     box-shadow: 0 1px 0 0 #76ff03;
+  }
+
+  .input-field input[type=password]:focus {
+     border-bottom: 1px solid #76ff03;
+     box-shadow: 0 1px 0 0 #76ff03;
+  }
+
+  .input-field input[type=textarea]:focus {
+     border-bottom: 1px solid #76ff03;
+     box-shadow: 0 1px 0 0 #76ff03;
+  }
+
+
 html {
-  font-family: 'Abel', sans-serif;
-  font-family: 'Quattrocento Sans', sans-serif;
-  font-family: 'Gudea', sans-serif;
+  font-family: 'Electrolize', sans-serif;
+  // font-family: 'Aldrich', sans-serif;
+  // font-family: 'Molengo', sans-serif;
+}
+p{
+  font-family: sans-serif;
+}
+
+.material-icons{
+  font-size: 50px;
+}
+
+.session{
+  width: 300px;
+  margin: auto;
+}
+
+.down{
+  background-color: pink;
+}
+
+.circle{
+  width: 30%;
+}
+
+.main{
+  font-size: 80px;
+}
+
+.material-icons{
+  color: #76ff03;
+}
+
+#slider{
+  width: 50%;
+  margin: auto;
+}
+
+#lessadventure{
+
+}
+#moreadventure{
+  position: absolute;
+  right: 100px;
 }

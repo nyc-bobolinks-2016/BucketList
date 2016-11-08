@@ -11,16 +11,12 @@
 
 <%if @user.personality %>
 <div class="row">
-  <ul class="collapsible popout col s1 m1 l12" data-collapsible="accordion">
+  <ul class="collapsible popout col s1 m1 l2" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header">
-          <i class="material-icons"></i>
+      <div class="collapsible-header orange">
+          <p><%=@type.nickname%></p> <i class="material-icons"></i>
       </div>
       <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][0]["name"], value:@user.personality.op } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][1]["name"], value:@user.personality.co } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][2]["name"], value:@user.personality.ex } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][3]["name"], value:@user.personality.ag } %>
-      <%= render 'big', locals:{name:@user.personality.parse_personality["personality"][4]["name"], value:@user.personality.ne } %>
       <div class="collapsible-body col s1 m1 l12">
           <div class="col l12 center" >
               <%= link_to "View full results",  personality_path(@user.personality.id), class: "waves-effect waves-light btn"  %>
@@ -31,4 +27,6 @@
 </div>
 <% end %>
 
-<%= render 'bucketList', locals:{buckelist: @buckelist } %>
+<%= render 'bucketList', locals:{buckelist: @buckelist} %>
+
+<div class="fb-share-button" data-href="http://dbcbucketlist.herokuapp.com/share/<%=current_user.id%>" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdbcbucketlist.herokuapp.com%2Fusers%2F9&amp;src=sdkpreparse">Share</a></div>
