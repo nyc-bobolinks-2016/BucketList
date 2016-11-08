@@ -234,11 +234,8 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   chart-js-rails
-
   chartjs-ror
-
   docx
-
   dotenv-rails
   jbuilder (~> 2.5)
   jquery-rails
