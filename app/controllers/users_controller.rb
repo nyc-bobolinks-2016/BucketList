@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  def big
+  end
+  
   def show
     if current_user
       @user = User.find_by(id: params[:id])
@@ -17,12 +20,13 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+
 
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to '/login'
+      session[:user_id] = @user.id
+      redirect_to @user
     else
       flash[:notice] = "Please complete all fields."
       redirect_to '/users/new'
@@ -43,6 +47,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @buckelist = @user.list_items.sort{|a,b| a<=>b}
   end
+
 
   private
 
