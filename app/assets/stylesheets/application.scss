@@ -42,6 +42,22 @@ h1{
   background-color: #76ff03;
 }
 
+ .input-field input[type=text]:focus {
+     border-bottom: 1px solid #76ff03;
+     box-shadow: 0 1px 0 0 #76ff03;
+  }
+
+  .input-field input[type=password]:focus {
+     border-bottom: 1px solid #76ff03;
+     box-shadow: 0 1px 0 0 #76ff03;
+  }
+
+  .input-field input[type=textarea]:focus {
+     border-bottom: 1px solid #76ff03;
+     box-shadow: 0 1px 0 0 #76ff03;
+  }
+
+
 html {
   font-family: 'Electrolize', sans-serif;
   // font-family: 'Aldrich', sans-serif;
