@@ -136,12 +136,7 @@ module PersonalitiesHelper
       border: 1,
       width: 100,
       height: 70,
-      scale: {
-        scaleLabel: {
-          display: false
-        },
-        fontSize: 0,
-      }
+
     }
   end
 
