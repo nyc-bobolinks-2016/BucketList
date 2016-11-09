@@ -5,8 +5,8 @@
   <% @scores["personality"].each do |trait| %>
       <div class="big-five" >
         <b><%=trait["name"]%></b>
-        <%= horizontal_bar_chart big_five_data(trait), big_five_options %>
-        <div class="sub-big-five" style="display:none;">
+        <p class = "z-depth-4"><%= horizontal_bar_chart big_five_data(trait), big_five_options %></p> 
+        <div class="sub-big-five" style="display:none; ">
           <%= horizontal_bar_chart sub_trait_data(trait), sub_trait_options %>
         </div>
       </div><br>
