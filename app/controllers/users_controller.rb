@@ -47,7 +47,6 @@ class UsersController < ApplicationController
     @buckelist = @user.list_items.sort{|a,b| a<=>b}
   end
 
-
   private
 
     def user_params
