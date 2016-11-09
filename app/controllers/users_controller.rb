@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+
 
   def create
     @user = User.new(user_params)
@@ -31,8 +31,7 @@ class UsersController < ApplicationController
 
   def update
     if request.xhr?
-      @comfort = (params[:value].to_f)/1000
-      p @comfort
+      @comfort = (params[:value].to_f)/100
       @user = current_user
       @user.update(comfortzone: @comfort)
       @user.save
