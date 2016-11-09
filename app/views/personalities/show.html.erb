@@ -5,13 +5,45 @@
   <% @scores["personality"].each do |trait| %>
       <div class="big-five" >
         <b><%=trait["name"]%></b>
-        <%= horizontal_bar_chart big_five_data(trait), big_five_options %>
-        <div class="sub-big-five" style="display:none;">
+        <p class = "z-depth-4"><%= horizontal_bar_chart big_five_data(trait), big_five_options %></p> 
+        <div class="sub-big-five" style="display:none; ">
           <%= horizontal_bar_chart sub_trait_data(trait), sub_trait_options %>
         </div>
       </div><br>
   <%end%>
-</div><br><br>
+</div><br><br><br><br>
+
+
+
+
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn center-align" href="#modal2">Consumption Preference</a>
+
+<!-- Modal Structure -->
+<div id="modal2" class="modal bottom-sheet blue-grey">
+  <div class="modal-content">
+    <div class="row">
+    <ul class="col s6">
+      <h3>Highly likely to....</h3>
+      <% likely_preferences(@scores["consumption_preferences"]).each do |preference| %>
+      <li style="padding-left: 20px;"> - <%=preference%></li>
+      <% end %>
+    </ul>
+    <h3>Highly unlikely to....</h3>
+    <ul class="col s6">
+    <% unlikely_preferences(@scores["consumption_preferences"]).each do |preference| %>
+      <li style="padding-left: 20px;"> - <%=preference%></li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="modal-footer">
+  </div>
+</div>
+</div>
+
+<br><br><br><br>
+
+
 <div class="row">
   <div class="col l6" >
     <%= polar_area_chart radar_data(@scores["needs"]), radar_options("Needs") %>
@@ -20,27 +52,3 @@
     <%= polar_area_chart radar_data(@scores["values"]), radar_options("Values") %>
   </div>
 </div>
-
-<h4 align="center">Consumption Preferences</h4>
-<ul class="collapsible bordered" data-collapsible="accordion">
-   <li>
-     <div class="collapsible-header #263238 blue-grey darken-4 unbordered"><i class="material-icons">place</i>Highly unlikely to...</div>
-     <div class="collapsible-body">
-       <ul>
-       <% unlikely_preferences(@scores["consumption_preferences"]).each do |preference| %>
-         <li style="padding-left: 20px;"> - <%=preference%></li>
-       <% end %>
-     </ul>
-     </div>
-   </li>
-   <li>
-     <div class="collapsible-header #263238 blue-grey darken-4" ><i class="material-icons">place</i>Highly likely to...</div>
-     <div class="collapsible-body">
-        <ul>
-          <% likely_preferences(@scores["consumption_preferences"]).each do |preference| %>
-          <li style="padding-left: 20px;"> - <%=preference%></li>
-          <% end %>
-        </ul>
-     </div>
-   </li>
- </ul>

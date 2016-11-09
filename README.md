@@ -1,11 +1,19 @@
 # README
+BucketList App
+
+Created by Derek Yang (@tofumaker), Olivia Coffaro (@oliviacoffaro), and Jesusmar Lima (@jesusmarlima)
+
+
+BucketList app utilize's the Watson API to analyze a user's personality, and then creates a custom bucketlist based on this assessment.
+
+How to install the code locally
+How to use the app
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.3.1
 
 * System dependencies
 

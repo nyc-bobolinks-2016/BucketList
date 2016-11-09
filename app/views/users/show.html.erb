@@ -1,16 +1,16 @@
 
 <div class="user_profile">
 
-  <h3><%= @user.full_name %>
-  - <%= @user.personality.convert_to_mb if @user.personality %><h3>
+  <h3><%= @user.full_name %> - <%= @user.personality.convert_to_mb if @user.personality %><h3>
 
 </div>
 <% if !@user.personality %>
 <div class="">
-<%= link_to "Analyze!", new_personality_path , class: "waves-effect waves-light btn" %>
+  <%= link_to "Analyze!", new_personality_path , class: "waves-effect waves-light btn" %>
 </div>
 
-<%elsif @user.personality %>
+<% else %>
+
 <div class="row section">
   <div class="col">
     <!-- Modal Trigger -->

@@ -8,13 +8,27 @@ module PersonalitiesHelper
   end
 
   def big_five_data(trait)
+    @color_hash = {
+      "Openness" => "#ff6f00",
+      "Conscientiousness" => "#00838f",
+      "Extraversion" => "#558b2f",
+      "Agreeableness" => "rgba(75, 192, 192, 0.9",
+      "Emotional range" => "rgba(153, 102, 255, 0.9)"
+    }
+    @border_color_hash = {
+      "Openess" => "rgba(255, 99, 132, 1)",
+      "Conscientiousness" => "rgba(54, 162, 235, 1)",
+      "Extraversion" => "rgba(255, 206, 86, 1)",
+      "Agreeableness" => "rgba(75, 192, 192, 1)",
+      "Emotional range" => "rgba(153, 102, 255, 1)"
+    }
     {
       labels: [trait["name"]],
       datasets: [
         {
             label: "Percentile",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-            borderColor: "rgba(54, 162, 235, 1)",
+            backgroundColor: @color_hash[trait["name"]],
+            borderColor: @border_color_hash[trait["name"]],
             data: [(trait["percentile"]*100).round(2)],
             hoverBorderWidth: 2
         }
@@ -44,6 +58,13 @@ module PersonalitiesHelper
   def sub_trait_data(trait)
     @labels = []
     @data = []
+    @color_hash = {
+      "Openness" => ["#ff8f00", "#ffa000", "#ffb300", "#ffc107", "#ffca28", "#ffd54f"],
+      "Conscientiousness" => ["#0097a7", "#00acc1", "#00bcd4", "#26c6da", "#4dd0e1", "#80deea"],
+      "Extraversion" => ["#689f38", "#7cb342", "#8bc34a", "#9ccc65", "#aed581", "#c5e1a5"],
+      "Agreeableness" => ["#", "#", "#", "#", "#", "#"],
+      "Emotional range" => ["#", "#", "#", "#", "#", "#"]
+    }
     trait["children"].each do |sub_trait|
       @labels << sub_trait["name"]
       @data << (sub_trait["percentile"]*100).round(2)
@@ -53,8 +74,15 @@ module PersonalitiesHelper
       datasets: [
         {
             label: "Percentile",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-            borderColor: "rgba(54, 162, 235, 1)",
+            backgroundColor: @color_hash[trait["name"]],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
             data: @data,
             hoverBorderWidth: 2
         }
@@ -66,7 +94,7 @@ module PersonalitiesHelper
     {
       legend: false,
       width: 400,
-      height: 30,
+      height: 70,
       scales: {
       xAxes: [
           {
@@ -75,7 +103,8 @@ module PersonalitiesHelper
             ticks: {
               min: 0,
               max:100,
-              fontColor: "white"
+              fontColor: "white",
+
             }
           }
       ],
@@ -86,6 +115,7 @@ module PersonalitiesHelper
               display: false
             },
             ticks: {
+              fontSize: 14,
               fontColor: "white"
             }
           }
@@ -105,18 +135,16 @@ module PersonalitiesHelper
       labels: @labels,
       datasets: [
         {
-            pointRadius: 5,
-            pointBorderWidth: 1,
             pointBackgroundColor: "red",
             label: "Percentile",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-            borderColor: "rgba(54, 162, 235, 1)",
+            backgroundColor: ["#ff8f00", "#ff5722", "#76ff03", "#18ffff", "#6200ea", "#f50057", "#d500f9", "#1de9b6", "#c6ff00", "#ff174", "#00e676", "#ea80fc" ],
+            borderColor: ["#ff8f00", "#ff5722", "#76ff03", "#18ffff", "#6200ea", "#f50057", "#d500f9", "#1de9b6", "#c6ff00", "#ff174", "#00e676", "#ea80fc" ],
             data: @data,
-            hoverBorderWidth: 2
         }
       ]
     }
   end
+  ["#ff8f00", "#ff5722", "#76ff03", "#18ffff", "#6200ea", "#f50057", "#d500f9", "#1de9b6", "#c6ff00", "#ff174", "#00e676", "#ea80fc" ]
 
   def radar_options(name)
     {
