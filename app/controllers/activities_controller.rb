@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :require_login
   include ActivityHelper
 
   def index
