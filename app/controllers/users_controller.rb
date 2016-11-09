@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def big
   end
-  
+
   def show
     if current_user
       @user = User.find_by(id: params[:id])
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to new_personality_path	
     else
       flash[:notice] = "Please complete all fields."
       redirect_to '/users/new'

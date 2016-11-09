@@ -10,7 +10,7 @@
 <%= link_to "Analyze!", new_personality_path , class: "waves-effect waves-light btn" %>
 </div>
 
-<%elsif @user.personality %>
+<%else %>
 
 <div class="row section">
   <div class="col">
@@ -18,9 +18,10 @@
     <a class="waves-effect waves-light btn" href="#modal1">About</a>
 
     <!-- Modal Structure -->
-    <div id="modal1" class="modal blue-grey">
+    <div id="modal1" class="modal blue-grey lighten-3">
       <div class="modal-content">
         <h4><%=@type.nickname%></h4>
+        <img src="<%=@type.icon_url%>" alt="" />
         <p><%=@type.content%></p>
       </div>
       <div class="modal-footer">
@@ -29,6 +30,7 @@
       </div>
     </div>
 
+    <h3><a href="/activities">Looks like you need to get some items on your list</a></h3>
 
 <% end %>
 
