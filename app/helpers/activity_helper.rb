@@ -18,7 +18,7 @@ module ActivityHelper
       @possible_activities -= [@next_activity]
       @match = true
       5.times do
-        @rnum = rand(0.0..5.0)
+        @rnum = rand(0.0..5.0) + 2.5*current_user.comfortzone
         @match = false if get_difference(@next_activity) > @rnum
       end
     end
