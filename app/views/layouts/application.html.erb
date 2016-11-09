@@ -15,7 +15,7 @@
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Bucketlist" />
 	<meta property="og:description"   content="Bucketlist analyzes a piece of your own writing or twitter and suggests activities based on your personality and comfort level. The app learns more about an activity based on user's votes and makes smarter suggestions." />
-	<meta property="og:image"         content="bucket.png" />
+	<meta property="og:image"         content="http://dbcbucketlist.herokuapp.com/bucket.png" />
   </head>
 
   <body>
@@ -25,9 +25,10 @@
      <%else%>
      <nav>
        <div class="nav-wrapper">
-          <a href="/" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <a href="/" class="brand-logo  hide-on-small-only">Logo</a>
+            <ul id="nav-mobile" class="right">
               <%if current_user %>
+
                 <li><a href="/users/<%=current_user.id%>">Profile</a></li>
                 <% if current_user.personality %>
                 <li><a href="/personalities/<%=current_user.personality.id%>">Results</a></li>
