@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20161109165520) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "photo_id"
   end
 
   create_table "users", force: :cascade do |t|
