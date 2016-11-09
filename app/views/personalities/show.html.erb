@@ -5,7 +5,7 @@
   <% @scores["personality"].each do |trait| %>
       <div class="big-five" >
         <b><%=trait["name"]%></b>
-        <p class = "z-depth-4"><%= horizontal_bar_chart big_five_data(trait), big_five_options %></p> 
+        <%= horizontal_bar_chart big_five_data(trait), big_five_options %>
         <div class="sub-big-five" style="display:none; ">
           <%= horizontal_bar_chart sub_trait_data(trait), sub_trait_options %>
         </div>
@@ -17,10 +17,13 @@
 
 
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn center-align" href="#modal2">Consumption Preference</a>
+<div align="center">
+<a class="waves-effect waves-light btn center-align" href="#modal2">Consumption Preferences</a>
+</div>
+
 
 <!-- Modal Structure -->
-<div id="modal2" class="modal bottom-sheet blue-grey">
+<div id="modal2" class="modal bottom-sheet blue-grey lighten-5">
   <div class="modal-content">
     <div class="row">
     <ul class="col s6">
