@@ -52,9 +52,13 @@ h1{
      box-shadow: 0 1px 0 0 #76ff03;
   }
 
-  .input-field input[type=textarea]:focus {
+  #text_to_analize:focus{
      border-bottom: 1px solid #76ff03;
      box-shadow: 0 1px 0 0 #76ff03;
+  }
+
+  .past_text:focus{
+    color: #76ff03;
   }
 
 
@@ -100,6 +104,7 @@ p{
 #lessadventure{
 
 }
+
 #moreadventure{
   position: absolute;
   right: 100px;
