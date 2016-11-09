@@ -1,6 +1,7 @@
 require 'rest-client'
 
 class PersonalitiesController < ApplicationController
+  before_action :require_login
 
   include TwitterModule
   include PersonalitiesHelper

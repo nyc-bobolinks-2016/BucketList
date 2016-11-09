@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to '/login' unless current_user
   end
+
+  def require_login
+      redirect_to login_path unless current_user
+  end
+
 end
