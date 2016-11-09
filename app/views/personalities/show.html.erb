@@ -1,41 +1,46 @@
-<div class="wait">
-  <div class="progress">
-      <div class="indeterminate"></div>
+<h5>Based on your <%=@scores["word_count"]%> words...</h5>
+<h4 align="center">Big 5 Personality Traits</h4>
+<h6 align="center">Myers-Briggs Type: <%=@mb_type%></h6>
+<div class="big-five-container">
+  <% @scores["personality"].each do |trait| %>
+      <div class="big-five" >
+        <b><%=trait["name"]%></b>
+        <%= horizontal_bar_chart big_five_data(trait), big_five_options %>
+        <div class="sub-big-five" style="display:none;">
+          <%= horizontal_bar_chart sub_trait_data(trait), sub_trait_options %>
+        </div>
+      </div><br>
+  <%end%>
+</div><br><br>
+<div class="row">
+  <div class="col l6" >
+    <%= polar_area_chart radar_data(@scores["needs"]), radar_options("Needs") %>
+  </div>
+  <div class="col l6">
+    <%= polar_area_chart radar_data(@scores["values"]), radar_options("Values") %>
   </div>
 </div>
-<div class="data">
-  <h5>Based on your <%=@scores["word_count"]%> words...</h5>
 
-  <h4>Myers-Briggs Type: <%=@mb_type%></h4>
-
-  <h4>Big 5</h4>
-  <% @scores["personality"].each do |trait| %>
-    <ul>
-      <b><%=trait["name"]%>: <%=trait["percentile"]%></b>
-      <% trait["children"].each do |sub_trait| %>
-        <li style="color: gray;"> - <%=sub_trait["name"]%>: <%=sub_trait["percentile"]%></li>
-      <%end%>
-    </ul>
-  <%end%>
-
-  <h4>Needs</h4>
-  <% @scores["needs"].each do |need| %>
-    <b><%=need["name"]%>: <%=need["percentile"]%></b><br>
-  <% end %>
-
-  <h4>Values</h4>
-  <% @scores["values"].each do |value| %>
-    <b><%=value["name"]%>: <%=value["percentile"]%></b><br>
-  <% end %>
-
-  <h4>Consumption Preferences</h4>
-  <% @scores["consumption_preferences"].each do |preference_category| %>
-    <ul>
-      <b><%=preference_category["name"]%></b>
-      <%preference_category["consumption_preferences"].each do |consumption_preference|%>
-        <li style="color: gray;"> - <%=consumption_preference["name"]%>: <%=consumption_preference["score"]%></li>
-      <%end%>
-    </ul>
-  <% end %>
-
-</div>
+<h4 align="center">Consumption Preferences</h4>
+<ul class="collapsible bordered" data-collapsible="accordion">
+   <li>
+     <div class="collapsible-header #263238 blue-grey darken-4 unbordered"><i class="material-icons">place</i>Highly unlikely to...</div>
+     <div class="collapsible-body">
+       <ul>
+       <% unlikely_preferences(@scores["consumption_preferences"]).each do |preference| %>
+         <li style="padding-left: 20px;"> - <%=preference%></li>
+       <% end %>
+     </ul>
+     </div>
+   </li>
+   <li>
+     <div class="collapsible-header #263238 blue-grey darken-4" ><i class="material-icons">place</i>Highly likely to...</div>
+     <div class="collapsible-body">
+        <ul>
+          <% likely_preferences(@scores["consumption_preferences"]).each do |preference| %>
+          <li style="padding-left: 20px;"> - <%=preference%></li>
+          <% end %>
+        </ul>
+     </div>
+   </li>
+ </ul>

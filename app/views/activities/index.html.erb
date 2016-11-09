@@ -1,10 +1,21 @@
 <div class="activities">
   <%= render 'activity', locals:{activity: @activity} %>
 </div>
-<div>
-  <form action="#">
-    <p class="thumb range-field">
-      <input type="range" id="test5" min="0.0" max="500.0" />
-    </p>
-  </form>
+<div class="row">
+<form class="col s12 ">
+  <div class="input-field col s4 m4 l4 hide-on-med-and-down center">
+    <span id="lessadventure">Less Adventure</span>
+  </div>
+
+  <div class="input-field col s12 m12 l4 ">
+    <p class="range-field chicken tooltipped" data-delay="50" data-tooltip="Slide to set openess level">  <input type="range" id="test5" min="0.0" max="100.0" value="<%=current_user.comfortzone*100%>" /> </p>
+
+  </div>
+  <div class="input-field col s4 m4 l4 hide-on-med-and-down center">
+      <span id="moreadventure">More Adventure</span>
+  </div>
+</form>
+<div class="">
+
+</div>
 </div>

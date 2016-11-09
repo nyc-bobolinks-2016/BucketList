@@ -1,0 +1,14 @@
+ <ul id="share_ul" class="collection with-header  bordered">
+   <li class="collection-header black"><h4><%= @buckelist[0].user.first_name %>'s bucket list</h4></li>
+    <% @buckelist.each do |item| %>
+    <li class="collection-item">
+      <% if item.checked %>
+        <input  type="checkbox" checked="checked" disabled id="<%=item.id%>" />
+      <%else%>
+         <input type="checkbox" disabled id="<%=item.id%>" />
+      <%end%>
+       <label for="<%=item.id%>"><%=item.activity.title%></label>
+    </li>
+    <% end %>
+  </ul>
+</div>

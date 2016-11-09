@@ -94,39 +94,48 @@ class Activity extends React.Component{
 
   render(){
     return(
-      <div className="container">
-        <div className="center">
+      <div className="container col 12">
+        <div className="center col 12">
           <h3>{this.state.activity.title}</h3>
         </div>
-        <div className="center">
-            <img src={this.state.activity.img_url}  className="circle responsive-img white "  />
+        <div className="row">
+
         </div>
-        <div className="row col 12">
-          <div className="col l3 center">
+        <div className="center col 12">
+            <img src={this.state.activity.img_url}  className="circle responsive-img white z-depth-5"  />
+        </div>
+        <div className="row">
+        </div>
+        <div className="row">
+        </div>
+        <div className="row">
+        </div>
+        <div className="row col 12 ">
+          <div className="col  s3 m3 l3 center">
             <a ref="down" onClick={(event) => this.downActivity(event)}
                 disabled={this.state.disabled}
-                className="btn-floating btn-large waves-effect waves-light red">
+                className="btn-floating btn-large waves-effect waves-light red darken-3 hoverable tooltipped" data-delay="50" data-tooltip="No">
               <i className="material-icons">thumb_down</i>
             </a>
           </div>
-          <div className="col l3 center">
+          <div className="col s3 m3 l3 center">
             <a ref="pass" onClick={(event) => this.passActivity(event)}
                 disabled={this.state.disabled}
-                className="btn-floating btn-large waves-effect waves-light blue">
+                className="btn-floating btn-large waves-effect waves-light light-blue lighten-2 hoverable tooltipped" data-delay="50" data-tooltip="Pass">
               <i className="material-icons">swap_horiz</i>
             </a>
           </div>
-          <div className="col l3 center">
+          <div className="col  s3 m3 l3 center">
             <a ref="done" onClick={(event) => this.doneActivity(event)}
                 disabled={this.state.disabled}
-                className="btn-floating btn-large waves-effect waves-light yellow">
+                className="btn-floating btn-large waves-effect waves-light  orange lighten-1 hoverable tooltipped" data-delay="50" data-tooltip="I've done this already">
               <i className="material-icons">done</i>
             </a>
           </div>
-          <div className="col l3 center">
+          <div className="col  s3 m3 l3 center">
             <a ref="up" onClick={(event) => this.upActivity(event)}
                 disabled={this.state.disabled}
-                className="btn-floating btn-large waves-effect waves-light green">
+                className="btn-floating btn-large waves-effect waves-light green hoverable tooltipped" data-delay="50" data-tooltip="Add to List">
               <i className="material-icons">thumb_up</i>
             </a>
           </div>

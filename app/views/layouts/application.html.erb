@@ -6,29 +6,34 @@
     <!--Import Google Icon Font-->
     <!-- Compiled and minified CSS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abel|Gudea|Quattrocento+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Electrolize|Molengo" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta property="og:url"           content="http://dbcbucketlist.herokuapp.com/" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Bucketlist" />
+	<meta property="og:description"   content="Bucketlist analyzes a piece of your own writing or twitter and suggests activities based on your personality and comfort level. The app learns more about an activity based on user's votes and makes smarter suggestions." />
+	<meta property="og:image"         content="http://dbcbucketlist.herokuapp.com/bucket.png" />
   </head>
 
   <body>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <div id="fb-root"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <% if current_page?('/')%>
+     <%else%>
      <nav>
        <div class="nav-wrapper">
-          <a href="/" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <%if  current_user %>
-                <li>Currently logged in as <%=current_user.first_name%></li>
+          <a href="/" class="brand-logo  hide-on-small-only">Logo</a>
+            <ul id="nav-mobile" class="right">
+              <%if current_user %>
+
                 <li><a href="/users/<%=current_user.id%>">Profile</a></li>
                 <% if current_user.personality %>
                 <li><a href="/personalities/<%=current_user.personality.id%>">Results</a></li>
-
                   <li><a href="/activities">Find Activities</a></li>
-                
+
                 <%end%>
                 <li><a href="/logout">Log Out</a></li>
               <% else %>
@@ -37,7 +42,7 @@
             </ul>
         </div>
       </nav>
-
+      <%end%>
      <div class="container">
        <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
@@ -45,5 +50,13 @@
     <%= yield %>
 
   </div>
+
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
   </body>
 </html>

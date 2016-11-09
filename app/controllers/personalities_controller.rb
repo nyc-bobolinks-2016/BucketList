@@ -1,6 +1,7 @@
 require 'rest-client'
 
 class PersonalitiesController < ApplicationController
+  before_action :require_login
 
   include TwitterModule
   include PersonalitiesHelper
@@ -24,12 +25,11 @@ class PersonalitiesController < ApplicationController
   end
 
   def create
-    if params[:personality][:text]
+    if params[:personality] && params[:personality][:text]
       uploaded = upload(params[:personality][:text])
     end
 
     @content = params["text_to_analyze"]
-
     if uploaded
         @content += uploaded
     end

@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  before_action :require_login
+
   include VotesHelper
   include ActivityHelper
 

@@ -10,21 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require Chart.min
 //= require jquery
 //= require jquery_ujs
 //= require react
 //= require react_ujs
 //= require components
 //= require_tree .
-$(function(){
+//= require materialize
 
-	$("#stage").load('interactive.svg',function(response){
-
-		$(this).addClass("svgLoaded");
-
-		if(!response){ // Error loading SVG
-			$(this).html('Error loading SVG. Be sure you are running from a the http protocol (not locally) and have read <strong><a href="http://tympanus.net/codrops/?p=13831#the-javascript">this important part of the tutorial</a></strong>');
-		}
-
-	});
+$(document).ready(function(){
+	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+	$('.modal').modal();
 });
