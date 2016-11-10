@@ -33,7 +33,9 @@
       </div>
     </div>
 
-    <h5><a id="add_alert" href="/activities">Looks like you need to get some items on your BucketList!</a></h5>
+    <% if @buckelist.empty? %>
+    <h5><a id="add_alert" href="/activities">Looks like you need to get some items on your BucketList ↪</a></h5>
+    <% end %>
 
 <% end %>
 
