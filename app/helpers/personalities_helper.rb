@@ -140,14 +140,13 @@ module PersonalitiesHelper
         {
             pointBackgroundColor: "red",
             label: "Percentile",
-            backgroundColor: ["#ff8f00", "#ff5722", "#76ff03", "#18ffff", "#6200ea", "#f50057", "#d500f9", "#1de9b6", "#c6ff00", "#ff174", "#00e676", "#ea80fc" ],
-            borderColor: ["#ff8f00", "#ff5722", "#76ff03", "#18ffff", "#6200ea", "#f50057", "#d500f9", "#1de9b6", "#c6ff00", "#ff174", "#00e676", "#ea80fc" ],
+            backgroundColor: "rgba(33, 150, 243, 0.5)",
+            borderColor: "rgba(33, 150, 243, 1)",
             data: @data,
         }
       ]
     }
   end
-  ["#ff8f00", "#ff5722", "#76ff03", "#18ffff", "#6200ea", "#f50057", "#d500f9", "#1de9b6", "#c6ff00", "#ff174", "#00e676", "#ea80fc" ]
 
   def radar_options(name)
     {
