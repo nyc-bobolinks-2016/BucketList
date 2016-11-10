@@ -8,7 +8,6 @@
 <div class="">
   <%= link_to "Analyze!", new_personality_path , class: "waves-effect waves-light btn" %>
 </div>
-
 <% else %>
 
 
@@ -19,21 +18,23 @@
     <a class="waves-effect waves-light btn" href="#modal1">About</a>
 
     <!-- Modal Structure -->
-
     <div id="modal1" class="modal">
 
       <div class="modal-content">
-        <h4><%=@type.nickname%></h4>
-        <img src="<%=@type.icon_url%>" alt="" />
+        <h4><%=@type.nickname%> <div class ="right"><img src="<%=@type.icon_url%>" alt="" /></div></h4><br>
         <p><%=@type.content%></p>
+
       </div>
       <div class="modal-footer">
+        <a href="https://www.16personalities.com/free-personality-test">   Via 16Personalities</a>
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         <a href="/personalities/<%=@user.personality.id%>" class=" modal-action modal-close waves-effect waves-green btn-flat">More</a>
       </div>
     </div>
 
-    <h3><a href="/activities">Looks like you need to get some items on your list </a></h3>
+    <% if @buckelist.empty? %>
+    <h5><a id="add_alert" href="/activities">Looks like you need to get some items on your BucketList ↪</a></h5>
+    <% end %>
 
 <% end %>
 

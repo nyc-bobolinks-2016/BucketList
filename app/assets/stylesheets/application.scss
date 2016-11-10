@@ -113,18 +113,10 @@ p{
   color: #58c100;
 }
 
+
 #slider{
   width: 50%;
   margin: auto;
-}
-
-#lessadventure{
-
-}
-
-#moreadventure{
-  position: absolute;
-  right: 100px;
 }
 
 
@@ -132,6 +124,27 @@ p{
   color: #323d4c;
 }
 
+#typeicon{
+
+}
+
+#add_alert{
+  color: white;
+}
+
+#login{
+  color: #323d4c;
+}
+
 .thumb{
-  background-color: #58c100;
+
+  background-color: #58c100 !important;
+}
+
+.active{
+  background-color: #58c100 !important;
+}
+
+#teamlink {
+  color: white;
 }
