@@ -15,6 +15,13 @@
  *= require_self
  */
 
+#modal2{
+  color: #242a33;
+}
+#modal1{
+  color: #4a5a70;
+}
+
 .parallax-container{
 
 }
@@ -39,22 +46,32 @@ h1{
 }
 
 .btn{
-  background-color: #76ff03;
+  background-color: #58c100;
+}
+.btn:hover{
+  background-color: #58c100;
 }
 
  .input-field input[type=text]:focus {
-     border-bottom: 1px solid #76ff03;
-     box-shadow: 0 1px 0 0 #76ff03;
+     border-bottom: 1px solid #58c100;
+     box-shadow: 0 1px 0 0 #58c100;
   }
 
   .input-field input[type=password]:focus {
-     border-bottom: 1px solid #76ff03;
-     box-shadow: 0 1px 0 0 #76ff03;
+     border-bottom: 1px solid #58c100;
+     box-shadow: 0 1px 0 0 #58c100;
   }
 
+
+  .input-field input[type=textarea]:focus {
+     border-bottom: 1px solid #58c100;
+     box-shadow: 0 1px 0 0 #58c100;
+  }
+  
   #text_to_analize:focus{
      border-bottom: 1px solid #76ff03;
      box-shadow: 0 1px 0 0 #76ff03;
+
   }
 
   .past_text:focus{
@@ -93,7 +110,7 @@ p{
 }
 
 .material-icons{
-  color: #76ff03;
+  color: #58c100;
 }
 
 .titlelogo{

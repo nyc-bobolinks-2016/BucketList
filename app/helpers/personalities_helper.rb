@@ -12,15 +12,15 @@ module PersonalitiesHelper
       "Openness" => "#ff6f00",
       "Conscientiousness" => "#00838f",
       "Extraversion" => "#558b2f",
-      "Agreeableness" => "rgba(75, 192, 192, 0.9",
-      "Emotional range" => "rgba(153, 102, 255, 0.9)"
+      "Agreeableness" => "#ad1457",
+      "Emotional range" => "#4527a0"
     }
     @border_color_hash = {
-      "Openess" => "rgba(255, 99, 132, 1)",
-      "Conscientiousness" => "rgba(54, 162, 235, 1)",
-      "Extraversion" => "rgba(255, 206, 86, 1)",
-      "Agreeableness" => "rgba(75, 192, 192, 1)",
-      "Emotional range" => "rgba(153, 102, 255, 1)"
+      "Openness" => "#ff6f00",
+      "Conscientiousness" => "#00838f",
+      "Extraversion" => "#558b2f",
+      "Agreeableness" => "#ad1457",
+      "Emotional range" => "#4527a0"
     }
     {
       labels: [trait["name"]],
@@ -58,13 +58,23 @@ module PersonalitiesHelper
   def sub_trait_data(trait)
     @labels = []
     @data = []
+
     @color_hash = {
       "Openness" => ["#ff8f00", "#ffa000", "#ffb300", "#ffc107", "#ffca28", "#ffd54f"],
       "Conscientiousness" => ["#0097a7", "#00acc1", "#00bcd4", "#26c6da", "#4dd0e1", "#80deea"],
       "Extraversion" => ["#689f38", "#7cb342", "#8bc34a", "#9ccc65", "#aed581", "#c5e1a5"],
-      "Agreeableness" => ["#", "#", "#", "#", "#", "#"],
-      "Emotional range" => ["#", "#", "#", "#", "#", "#"]
+      "Agreeableness" => ["#c2185b", "#d81b60", "#e91e63", "#ec407a", "#f06292", "#f48fb1"],
+      "Emotional range" => ["#512da8", "#5e35b1", "#673ab7", "#7e57c2", "#9575cd", "#b39ddb"]
     }
+
+    @border_color_hash = {
+      "Openness" => "#ff6f00",
+      "Conscientiousness" => "#00838f",
+      "Extraversion" => "#558b2f",
+      "Agreeableness" => "#ad1457",
+      "Emotional range" => "#4527a0"
+    }
+
     trait["children"].each do |sub_trait|
       @labels << sub_trait["name"]
       @data << (sub_trait["percentile"]*100).round(2)
@@ -75,14 +85,7 @@ module PersonalitiesHelper
         {
             label: "Percentile",
             backgroundColor: @color_hash[trait["name"]],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
+            borderColor: @border_color_hash[trait["name"]],
             data: @data,
             hoverBorderWidth: 2
         }
