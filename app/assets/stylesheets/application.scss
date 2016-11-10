@@ -67,7 +67,7 @@ h1{
      border-bottom: 1px solid #58c100;
      box-shadow: 0 1px 0 0 #58c100;
   }
-  
+
   #text_to_analize:focus{
      border-bottom: 1px solid #76ff03;
      box-shadow: 0 1px 0 0 #76ff03;
@@ -113,10 +113,6 @@ p{
   color: #58c100;
 }
 
-.titlelogo{
-  font-size: 10px;
-  color: pink;
-}
 
 #slider{
   width: 50%;
@@ -125,5 +121,17 @@ p{
 
 
 .log{
+  color: #323d4c;
+}
+
+#typeicon{
+
+}
+
+#add_alert{
+  color: white;
+}
+
+#login{
   color: #323d4c;
 }
