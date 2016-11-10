@@ -1,21 +1,30 @@
 <div class="activities">
   <%= render 'activity', locals:{activity: @activity} %>
 </div>
-<div class="row">
+
 <form class="col s12 ">
-  <div class="input-field col s4 m4 l4 hide-on-med-and-down center">
-    <span id="lessadventure">Less Adventure</span>
-  </div>
 
-  <div class="input-field col s12 m12 l4 ">
-    <p class="range-field chicken tooltipped" data-delay="50" data-tooltip="Slide to set openess level">  <input type="range" id="test5" min="0.0" max="100.0" value="<%=current_user.comfortzone*100%>" /> </p>
+<div class="row">
+  <div class="col l3">
+  </div>
+  <div class="input-field col s12 m12 l6 center">
+    <p class="range-field comfortzone tooltipped" data-delay="50" data-tooltip="Slide to set comfortzone">  <input type="range" id="test5" min="0.0" max="100.0" value="<%=current_user.comfortzone*100%>" /> </p>
+  </div>
+  <div class="col l3">
+  </div>
+</div>
+<div class="row">
+  <div class="col l3">
+  </div>
+  <p class="col s12 m12 l6 center" style="color: gray;"><i class="tiny material-icons">info</i>
+    Adjust the comfortzone slider to control the activities suggested to you. A low comfortzone will produce activities more tailored to your personality.
+  </p>
+  <div class="col l3">
+  </div>
+</div>
 
-  </div>
-  <div class="input-field col s4 m4 l4 hide-on-med-and-down center">
-      <span id="moreadventure">More Adventure</span>
-  </div>
+
+
+
+
 </form>
-<div class="">
-
-</div>
-</div>

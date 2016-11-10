@@ -67,7 +67,7 @@ h1{
      border-bottom: 1px solid #58c100;
      box-shadow: 0 1px 0 0 #58c100;
   }
-  
+
   #text_to_analize:focus{
      border-bottom: 1px solid #76ff03;
      box-shadow: 0 1px 0 0 #76ff03;
@@ -130,4 +130,8 @@ p{
 
 .log{
   color: #323d4c;
+}
+
+.thumb{
+  background-color: #58c100;
 }
