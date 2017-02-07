@@ -29,7 +29,7 @@ class Activity extends React.Component{
       })
     })
   }
-  
+
 
   vote(event,action){
     var route = "/activities/"+this.state.activity.id+"/votes"
@@ -65,7 +65,7 @@ class Activity extends React.Component{
           <VoteButton tooltip={"No"} onClick={this.vote.bind(this)} tumb_icon={"thumb_down"} action={"down"} color={"red darken-3"}/>
           <VoteButton tooltip={"Pass"} onClick={this.vote.bind(this)} tumb_icon={"swap_horiz"} action={"pass"} color={"light-blue lighten-2"}/>
           <VoteButton tooltip={"I've done this already"} onClick={this.vote.bind(this)} tumb_icon={"done"} action={"done"} color={"orange lighten-1"}/>
-          <VoteButton tooltip={"Up"} onClick={this.vote.bind(this)} tumb_icon={"thumb_up"} action={"up"} color={"green"}/>
+          <VoteButton tooltip={"Add to List"} onClick={this.vote.bind(this)} tumb_icon={"thumb_up"} action={"up"} color={"green"}/>
         </div>
       </div>
     )
