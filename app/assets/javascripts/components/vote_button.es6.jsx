@@ -1,6 +1,6 @@
 class VoteButton extends React.Component{
 
-s  constructor(){
+  constructor(){
     super()
     this.state = {
         disabled:false
